@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- Google Fonts 8-bit font -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'VT323', monospace;
+            background-color: #18332b;
+            color: #3e2712;
+            min-height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+         
+    /* Animate back button on hover */
+    .back-btn {
+      transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s, background 0.2s, color 0.2s;
+    }
+    .back-btn:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 6px 24px 0 #fbbf24, 0 1.5px 8px 0 #f472b6;
+      background: #fbbf24 !important;
+      color: #2c3e50 !important;
+    }
+
+        .container {
+            max-width: 960px;
+            width: 100%;
+            background-color: #18332b;
+            color: #3e2712;
+            margin: 0 auto; /* Center the container */
+        }
+
+        /* Add hover effect to images in image-container */
+        .image-container img {
+            transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+        }
+        .image-container img:hover {
+            transform: scale(1.07) rotate(-2deg);
+            box-shadow: 0 6px 24px 0 #a68b5b;
+            background: #bfae99;
+        }
+        
+        .cd-disk {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            width: 64px;
+            height: 64px;
+        }
+
+        .back-button-container {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 2rem;
+        }
+
+        .content-section .text-content, .content-section ul, .content-section p, .content-section h2 {
+            font-size: 1.25rem;
+        }
+        
+        .content-section.image-left {
+            flex-direction: column;
+        }
+        
+        @media (min-width: 768px) {
+            .content-section.image-left {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .content-section.image-right {
+                flex-direction: row-reverse;
+                text-align: left;
+            }
+        }
+        
+        .image-container {
+            flex-shrink: 0;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #fffbe8;
+            text-shadow: 2px 2px 8px #2c3e50, 0 2px 12px #0008;
+        }
+
+        .subheader {
+            margin-top: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            color: #f5f5e5;
+            text-shadow: 1px 1px 6px #2c3e50, 0 1px 8px #0006;
+            color: #f5f5e5;
+            text-shadow: 1px 1px 6px #2c3e50, 0 1px 8px #0006;
+        }
+    </style>
+</head>
+<body class="text-white font-press-start-2p p-4">
+
+    <!-- back button -->
+    <div class="back-button-container">
+        <a href="index.html" onclick="window.history.back(); return false;" 
+           class="inline-block px-4 py-2 border-2 border-white text-white no-underline transition-all duration-300 hover:bg-white hover:text-black hover:shadow-lg">
+            BACK
+        </a>
+    </div>
+
+    <div class="container rounded-md shadow-lg p-12">
+        <!-- main title -->
+        <h1 class="title font-bold text-stone-200">about katie</h1>
+        
+        <!-- First Text and Image Section -->
+        <div class="content-section image-left">
+            <div class="image-container grid grid-cols-2 gap-4">
+                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+1" alt="About Me image 1" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+2" alt="About Me image 2" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+3" alt="About Me image 3" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+4" alt="About Me image 4" class="rounded-md border-2 border-stone-200">
+            </div>
+            <div class="text-content">
+                <p class="mt-4 text-stone-400">
+                    Hello! I'm Katie, a digital explorer with a passion for vintage technology and the nostalgic glow of CRT monitors. I love creating things that feel both new and old at the same time. When I'm not coding, you can find me collecting old video games and listening to synthwave.
+                </p>
+                <p class="mt-4 text-stone-400">
+                    This website is a work in progress, a digital scrapbook of my thoughts, projects, and whatever else I feel like sharing. I hope you enjoy the retro vibe!
+                </p>
+            </div>
+        </div>
+        
+        <!-- Second Text and Image Section (with image on the right) -->
+        <div class="content-section image-right">
+            <div class="image-container grid grid-cols-2 gap-4">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+1" alt="Project image 1" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+2" alt="Project image 2" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+3" alt="Project image 3" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+4" alt="Project image 4" class="rounded-md border-2 border-stone-200">
+            </div>
+            <div class="text-content">
+                <h2 class="font-bold text-stone-200 text-2xl mb-2">My Projects</h2>
+                <ul class="list-disc list-inside text-stone-400 space-y-2">
+                    <li>Building small web applications with a retro aesthetic</li>
+                    <li>Maintaining a personal blog about vintage computing</li>
+                    <li>Experimenting with synthwave-inspired designs</li>
+                    <li>Always on the lookout for new inspiration and ideas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Third Text and Image Section (with image on the left) -->
+        <div class="content-section image-left">
+            <div class="image-container grid grid-cols-2 gap-4">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+1" alt="Hobbies image 1" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+2" alt="Hobbies image 2" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+3" alt="Hobbies image 3" class="rounded-md border-2 border-stone-200">
+                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+4" alt="Hobbies image 4" class="rounded-md border-2 border-stone-200">
+            </div>
+            <div class="text-content">
+                <h2 class="font-bold text-stone-200 text-2xl mb-2">My Hobbies</h2>
+                <ul class="list-disc list-inside text-stone-400 space-y-2">
+                    <li>Hiking and enjoying the outdoors</li>
+                    <li>Playing the ukulele and experimenting with music</li>
+                    <li>Exploring new coffee shops around town</li>
+                    <li>Finding creative inspiration through offline activities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CD Disk GIF Placeholder -->
+    <div class="cd-disk">
+        <img src="./cd_008.gif" alt="8-bit CD disk" class="w-full h-full">
+    </div>
+</body>
+</html>
