@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
+    <html lang="en">
+    <!-- Click sound effect -->
+  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+</body>
+<script>
+// Play click sound
+const clickSound = document.getElementById('click-sound');
+document.addEventListener('click', (e) => {
+  // Prevent sound on audio controls or if sound file is missing
+  if (e.target.tagName === 'AUDIO' || !clickSound) return;
+  clickSound.currentTime = 0;
+  clickSound.play();
+});
+</script>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>about katie</title>
     <!-- Google Fonts 8-bit font -->
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Make main body text pop but less bright than the title */
+        .pop-body, .pop-body p, .pop-body ul, .pop-body li, .pop-body h2 {
+            color: #f8f5e2 !important;
+            text-shadow: 1.5px 1.5px 8px #2c3e50, 0 2px 12px #0008;
+            font-weight: 600;
+        }
         body {
             font-family: 'VT323', monospace;
             background-color: #18332b;
@@ -70,7 +90,7 @@
         }
 
         .content-section .text-content, .content-section ul, .content-section p, .content-section h2 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
         }
         
         .content-section.image-left {
@@ -121,7 +141,7 @@
         </a>
     </div>
 
-    <div class="container rounded-md shadow-lg p-12">
+    <div class="container rounded-md shadow-lg p-12 pop-body">
         <!-- main title -->
         <h1 class="title font-bold text-stone-200">about katie</h1>
         
@@ -135,7 +155,7 @@
             </div>
             <div class="text-content">
                 <p class="mt-4 text-stone-400">
-                    Hello! I'm Katie, a digital explorer with a passion for vintage technology and the nostalgic glow of CRT monitors. I love creating things that feel both new and old at the same time. When I'm not coding, you can find me collecting old video games and listening to synthwave.
+                    you probably already know a lot of things about katie, like how she's now a senior and likes to keep her hair short, or that 
                 </p>
                 <p class="mt-4 text-stone-400">
                     This website is a work in progress, a digital scrapbook of my thoughts, projects, and whatever else I feel like sharing. I hope you enjoy the retro vibe!
@@ -152,12 +172,14 @@
                 <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+4" alt="Project image 4" class="rounded-md border-2 border-stone-200">
             </div>
             <div class="text-content">
-                <h2 class="font-bold text-stone-200 text-2xl mb-2">My Projects</h2>
+                <h2 class="font-bold text-stone-200 text-2xl mb-2">things katie loves</h2>
                 <ul class="list-disc list-inside text-stone-400 space-y-2">
-                    <li>Building small web applications with a retro aesthetic</li>
-                    <li>Maintaining a personal blog about vintage computing</li>
-                    <li>Experimenting with synthwave-inspired designs</li>
-                    <li>Always on the lookout for new inspiration and ideas</li>
+                    <li>thrifting for cool clothes (she calls it drip)</li>
+                    <li>wearing hats and silver jewelry</li>
+                    <li>butter pecan ice cream</li>
+                    <li>being considerate of other people</li>
+                    <li>playing clash of clans</li>
+                    <li>computer science and coding (it's been her dream career since high school!)</li>
                 </ul>
             </div>
         </div>
@@ -171,11 +193,11 @@
                 <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+4" alt="Hobbies image 4" class="rounded-md border-2 border-stone-200">
             </div>
             <div class="text-content">
-                <h2 class="font-bold text-stone-200 text-2xl mb-2">My Hobbies</h2>
+                <h2 class="font-bold text-stone-200 text-2xl mb-2">things katie dislikes</h2>
                 <ul class="list-disc list-inside text-stone-400 space-y-2">
-                    <li>Hiking and enjoying the outdoors</li>
-                    <li>Playing the ukulele and experimenting with music</li>
-                    <li>Exploring new coffee shops around town</li>
+                    <li>mint choco chip ice cream</li>
+                    <li>homework >:(</li>
+                    <li>making people sad</li>
                     <li>Finding creative inspiration through offline activities</li>
                 </ul>
             </div>

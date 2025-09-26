@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+  <html lang="en">
+    <!-- Click sound effect -->
+  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+</body>
+<script>
+// Play click sound
+const clickSound = document.getElementById('click-sound');
+document.addEventListener('click', (e) => {
+  // Prevent sound on audio controls or if sound file is missing
+  if (e.target.tagName === 'AUDIO' || !clickSound) return;
+  clickSound.currentTime = 0;
+  clickSound.play();
+});
+</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
