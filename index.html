@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Click sound effect -->
+  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+</body>
+<script>
+// Play click sound
+const clickSound = document.getElementById('click-sound');
+document.addEventListener('click', (e) => {
+  // Prevent sound on audio controls or if sound file is missing
+  if (e.target.tagName === 'AUDIO' || !clickSound) return;
+  clickSound.currentTime = 0;
+  clickSound.play();
+});
+</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +20,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <style>
+    /* Make subheader text larger */
+    .subheader {
+      font-size: 1.30rem;
+    }
+    /* Make grid box text larger */
+    .animated-box {
+      font-size: 1.35rem;
+    }
     body {
       font-family: 'VT323', monospace;
       background-color: #18332b;
@@ -43,20 +64,17 @@
 <body class="flex items-center justify-center min-h-screen text-white p-4">
   <div class="text-center">
     <h1 class="text-5xl mb-4">hi katie</h1>
-    <p class="max-w-xl mx-auto text-stone-300 mb-8">
-      if you're here, it means you either are katie or you want to know more about katie...
+  <p class="max-w-xl mx-auto text-stone-300 mb-8 subheader">
+      if you're here, it means you either are katie or you want to know more about katie. click any of the boxes below to explore and show your appreciation for her!
     </p>
 
-    <!-- strict 2x2 grid -->
-    <div class="grid grid-cols-2 grid-rows-2 gap-8 justify-center">
+    <!-- 3-box grid -->
+    <div class="grid grid-cols-3 gap-8 justify-center">
       <a href="about-katie.html" class="bg-[#d2bfa3]  text-[#3e2712] rounded-2xl flex items-center justify-center min-h-[12rem] w-64 animated-box">
         about katie
       </a>
       <a href="music-library.html" class="bg-[#d2bfa3]  text-[#3e2712] rounded-2xl flex items-center justify-center min-h-[12rem] w-64 animated-box">
         katie's music library
-      </a>
-      <a href="photos.html" class="bg-[#d2bfa3] text-[#3e2712] rounded-2xl flex items-center justify-center min-h-[12rem] w-64 animated-box">
-        photos of katie
       </a>
       <a href="letters.html" class="bg-[#d2bfa3] text-[#3e2712] rounded-2xl flex items-center justify-center min-h-[12rem] w-64 animated-box">
         letters for katie
@@ -71,7 +89,7 @@
   <audio id="bg-music" src="" preload="auto"></audio>
 </body>
 <script>
-// Playlist array: replace with your own mp3 files and titles
+// Playlist array
 const playlist = [
   { src: 'song1.mp3', title: 'Song One' },
   { src: 'song2.mp3', title: 'Song Two' },
@@ -83,12 +101,10 @@ const cdGif = document.getElementById('cd-gif');
 const songTitle = document.getElementById('song-title');
 let spinning = false;
 
+
 cdGif.addEventListener('click', () => {
-  // On first click, swap to spinning gif
-  if (!spinning) {
-    cdGif.src = 'cd_008.gif';
-    spinning = true;
-  }
+  // Always set to spinning gif on click
+  cdGif.src = 'cd_008.gif';
   // Advance to next song
   currentSong = (currentSong + 1) % playlist.length;
   audio.src = playlist[currentSong].src;
@@ -96,12 +112,17 @@ cdGif.addEventListener('click', () => {
   songTitle.textContent = playlist[currentSong].title;
 });
 
+// When music ends or is paused, return to static image
 audio.addEventListener('ended', () => {
+  cdGif.src = 'cd_008_static.png';
   // Auto-advance to next song when current ends
   currentSong = (currentSong + 1) % playlist.length;
   audio.src = playlist[currentSong].src;
   audio.play();
   songTitle.textContent = playlist[currentSong].title;
+});
+audio.addEventListener('pause', () => {
+  cdGif.src = 'cd_008_static.png';
 });
 </script>
   
