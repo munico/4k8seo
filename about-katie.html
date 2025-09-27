@@ -1,29 +1,18 @@
 <!DOCTYPE html>
 <html>
     <html lang="en">
-    <!-- Click sound effect -->
+    
   <audio id="click-sound" src="click.mp3" preload="auto"></audio>
-</body>
-<script>
-// Play click sound
-const clickSound = document.getElementById('click-sound');
-document.addEventListener('click', (e) => {
-  // Prevent sound on audio controls or if sound file is missing
-  if (e.target.tagName === 'AUDIO' || !clickSound) return;
-  clickSound.currentTime = 0;
-  clickSound.play();
-});
-</script>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about katie</title>
-    <!-- Google Fonts 8-bit font -->
+    <!-- 8-bit font -->
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
+    <!-- tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Make main body text pop but less bright than the title */
+        
         .pop-body, .pop-body p, .pop-body ul, .pop-body li, .pop-body h2 {
             color: #f8f5e2 !important;
             text-shadow: 1.5px 1.5px 8px #2c3e50, 0 2px 12px #0008;
@@ -38,7 +27,7 @@ document.addEventListener('click', (e) => {
             box-sizing: border-box;
         }
          
-    /* Animate back button on hover */
+    /* animate back button on hover */
     .back-btn {
       transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s, background 0.2s, color 0.2s;
     }
@@ -56,8 +45,7 @@ document.addEventListener('click', (e) => {
             color: #3e2712;
             margin: 0 auto; /* Center the container */
         }
-
-        /* Add hover effect to images in image-container */
+    
         .image-container img {
             transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
         }
@@ -85,8 +73,9 @@ document.addEventListener('click', (e) => {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 2rem;
-            gap: 2rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            gap: 2.5rem;
         }
 
         .content-section .text-content, .content-section ul, .content-section p, .content-section h2 {
@@ -145,34 +134,57 @@ document.addEventListener('click', (e) => {
         <!-- main title -->
         <h1 class="title font-bold text-stone-200">about katie</h1>
         
-        <!-- First Text and Image Section -->
-        <div class="content-section image-left">
-            <div class="image-container grid grid-cols-2 gap-4">
-                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+1" alt="About Me image 1" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+2" alt="About Me image 2" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+3" alt="About Me image 3" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/2c3e50/ffffff?text=Image+4" alt="About Me image 4" class="rounded-md border-2 border-stone-200">
-            </div>
-            <div class="text-content">
-                <p class="mt-4 text-stone-400">
-                    you probably already know a lot of things about katie, like how she's now a senior and likes to keep her hair short, or that 
-                </p>
-                <p class="mt-4 text-stone-400">
-                    This website is a work in progress, a digital scrapbook of my thoughts, projects, and whatever else I feel like sharing. I hope you enjoy the retro vibe!
-                </p>
+        <!-- first section -->
+        <div class="content-section image-left flex flex-col items-center">
+            <div class="w-full flex flex-col items-center">
+                <div class="text-content w-full" style="max-width:1000px;">
+                    <p class="mb-4 text-stone-400 text-base md:text-lg text-center" style="line-height:1.3;">
+                        you probably already know a lot of things about katie, like how she's now a senior and likes to keep her hair short, and that she's traveled quite a bit this year...
+                    </p>
+                </div>
+                <div class="image-container flex flex-row justify-center gap-8 mb-4" style="max-width:1000px;">
+                    <img src="images/beach-vertical.JPG" alt="About Me image 1" class="rounded-md border-2 border-stone-200 object-cover w-[110px] h-[170px] md:w-[180px] md:h-[280px]">
+                    <img src="images/umi-vertical.png" alt="About Me image 2" class="rounded-md border-2 border-stone-200 object-cover w-[110px] h-[170px] md:w-[180px] md:h-[280px]">
+                    <img src="images/records-vertical.png" alt="About Me image 3" class="rounded-md border-2 border-stone-200 object-cover w-[110px] h-[170px] md:w-[180px] md:h-[280px]">
+                    <img src="images/brunch-vertical.JPG" alt="About Me image 4" class="rounded-md border-2 border-stone-200 object-cover w-[110px] h-[170px] md:w-[180px] md:h-[280px]">
+                </div>
+                <div class="text-content w-full" style="max-width:1000px;">
+                    <p class="mt-0 text-stone-400 text-base md:text-lg text-center" style="line-height:1.3;">
+                        ...but there's a lot more to katie. she enjoys to work on her coding projects, but you might also catch her listing clothes on depop that no longer speak to her 
+                        (or scouring for her next signature piece...), discovering new music and organizing her spotify playlists, or petting every cute animal (even though she's allergic).
+                    </p>
+                </div>
             </div>
         </div>
         
-        <!-- Second Text and Image Section (with image on the right) -->
+        <!-- second section -->
         <div class="content-section image-right">
-            <div class="image-container grid grid-cols-2 gap-4">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+1" alt="Project image 1" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+2" alt="Project image 2" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+3" alt="Project image 3" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+4" alt="Project image 4" class="rounded-md border-2 border-stone-200">
+            <div class="image-container grid grid-cols-2 gap-4 md:w-[54%] md:mr-8">
+                <img src="images/car-rect.JPG" alt="Project image 1" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
+                <img src="images/italy-rect.JPG" alt="Project image 2" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
+                <img src="images/friendz-rect.JPG" alt="Project image 3" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
+                <img src="images/beni-rect.JPG" alt="Project image 4" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
             </div>
-            <div class="text-content">
-                <h2 class="font-bold text-stone-200 text-2xl mb-2">things katie loves</h2>
+            <div class="text-content w-full md:w-[46%]">
+                <p class="mt-4 text-stone-400">
+                    she may call herself shy, but if you ever walk with her through campus or a group gathering,
+                    you'll see so many of her friends run up to her to say hi, and you'll realize just how many people's days she lights up.
+                    if you continue hanging out with her, you'll also see that she would never leave a wrapper on the table or not clean up after herself and others
+                     —— she wouldn't anything to inconvenience people or be inconsiderate. you'll realize also that she's wonderful listener, and under her cool facade has a very sensitive heart.
+                <p>
+            </div>
+        </div>
+
+        <!-- third section -->
+        <div class="content-section image-left flex flex-col md:flex-row md:items-start md:gap-8">
+            <div class="image-container grid grid-cols-2 gap-4 md:w-[54%] md:mr-8">
+                <img src="images/games.png" alt="Hobbies image 1" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
+                <img src="images/friends-rect.JPG" alt="Hobbies image 2" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
+                <img src="images/shrey-rect.JPG" alt="Hobbies image 3" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
+                <img src="images/julie.jpg" alt="Hobbies image 4" class="rounded-md border-2 border-stone-200 object-cover w-[160px] h-[110px] md:w-[300px] md:h-[200px]">
+            </div>
+            <div class="text-content w-full md:w-[46%]">
+                     <h2 class="font-bold text-stone-200 text-2xl mb-2">things katie loves</h2>
                 <ul class="list-disc list-inside text-stone-400 space-y-2">
                     <li>thrifting for cool clothes (she calls it drip)</li>
                     <li>wearing hats and silver jewelry</li>
@@ -180,33 +192,87 @@ document.addEventListener('click', (e) => {
                     <li>being considerate of other people</li>
                     <li>playing clash of clans</li>
                     <li>computer science and coding (it's been her dream career since high school!)</li>
+                    <li>her doggies pom pom and julie</li>
+                    <li>quality time <3</li>
+                </ul>
                 </ul>
             </div>
         </div>
-
-        <!-- Third Text and Image Section (with image on the left) -->
-        <div class="content-section image-left">
-            <div class="image-container grid grid-cols-2 gap-4">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+1" alt="Hobbies image 1" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+2" alt="Hobbies image 2" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+3" alt="Hobbies image 3" class="rounded-md border-2 border-stone-200">
-                <img src="https://placehold.co/200x200/34495e/ffffff?text=Image+4" alt="Hobbies image 4" class="rounded-md border-2 border-stone-200">
+        <!-- fourth section -->
+        <div class="content-section image-right flex flex-col md:flex-row md:items-start md:gap-8">
+            <div class="image-container flex flex-col gap-4 md:flex-row md:gap-8 md:max-w-[520px]">
+                 <img src="images/cook.JPG" alt="About Me image 1" class="rounded-md border-2 border-stone-200 object-cover w-[180px] h-[200px] md:w-[220px] md:h-[260px]">
+                 <img src="images/winnie-vertical.png" alt="About Me image 2" class="rounded-md border-2 border-stone-200 object-cover w-[180px] h-[200px] md:w-[220px] md:h-[260px]">
+                 <img src="images/coffee-date-rect.JPG" alt="About Me image 3" class="rounded-md border-2 border-stone-200 object-cover w-[180px] h-[200px] md:w-[220px] md:h-[260px]">
             </div>
-            <div class="text-content">
-                <h2 class="font-bold text-stone-200 text-2xl mb-2">things katie dislikes</h2>
+            <div class="text-content flex-1 md:ml-8">
+                <h2 class="font-bold text-stone-200 text-2xl mb-2">things katie has picked up more since she turned 20</h2>
                 <ul class="list-disc list-inside text-stone-400 space-y-2">
-                    <li>mint choco chip ice cream</li>
-                    <li>homework >:(</li>
-                    <li>making people sad</li>
-                    <li>Finding creative inspiration through offline activities</li>
+                    <li>cooking new recipes</li>
+                    <li>black tea & grumpy cats</li>
+                    <li>cafe-hopping</li>
+                    <li>a lot more that won't fit here...</li>
                 </ul>
             </div>
         </div>
     </div>
+    <div style="position: fixed; bottom: 1rem; left: 1rem; display: flex; align-items: center; z-index: 100;">
+  <img src="cd_008_static.png" alt="cd disk" class="cd-disk" id="cd-gif" style="position: static; width: 64px; height: 64px; cursor: pointer;">
+    <span id="song-title" style="margin-left: 1rem; color: #fffbe8; font-size: 1.1rem; text-shadow: 1px 1px 6px #2c3e50, 0 1px 8px #0006; font-family: 'VT323', monospace;">click to play a song!</span>
+  </div>
+  <audio id="bg-music" src="" preload="auto"></audio>
 
-    <!-- CD Disk GIF Placeholder -->
-    <div class="cd-disk">
-        <img src="./cd_008.gif" alt="8-bit CD disk" class="w-full h-full">
-    </div>
+  <script>
+        // playlist
+    const playlist = [
+      { src: 'music/clairo-slow dance.mp3', title: 'clairo - slow dance' },
+      { src: 'music/dijon_hunni.mp3', title: 'dijon - hunni' },
+      { src: 'music/dont_lie-vampire_weekend.mp3', title: 'vampire weekend - don\'t lie' },
+      { src: 'music/finneas_lets-fall-in-love-for-the-night.mp3', title: 'finneas - let\'s fall in love for the night' },
+      { src: 'music/forrest_gump-frank_ocean', title: 'frank ocean - forrest gump' },
+      { src: 'music/jacob-(feat.-clairo)_you-might-be-sleeping.mp3', title: 'jakob (feat. clairo) - you might be sleeping' },
+      { src: 'music/mk.gee_are-you-looking-up.mp3', title: 'mk.gee - are you looking up' },
+      { src: 'music/omar-apollo_go-away.mp3', title: 'omar apollo - go away' },
+      { src: 'music/frank-ocean_at-your-best.mp3', title: 'frank ocean - at your best' },
+      { src: 'music/sade_kiss-of-life.mp3', title: 'sade - kiss of life' },
+      { src: 'music/the-1975_the-birthday-party-lyrics.mp3', title: 'the 1975 - the birthday party' }, 
+    ];
+    let currentSong = -1;
+    const audio = document.getElementById('bg-music');
+    const cdGif = document.getElementById('cd-gif');
+    const songTitle = document.getElementById('song-title');
+    let spinning = false;
+
+    cdGif.addEventListener('click', () => {
+      cdGif.src = './cd_008.gif';
+      // go to next song
+      currentSong = (currentSong + 1) % playlist.length;
+      audio.src = playlist[currentSong].src;
+      audio.play();
+      songTitle.textContent = playlist[currentSong].title;
+    });
+
+    // wehn music ends return to static image
+    audio.addEventListener('ended', () => {
+      cdGif.src = './cd_008_static.png';
+      // auto-advance to next song when current ends
+      currentSong = (currentSong + 1) % playlist.length;
+      audio.src = playlist[currentSong].src;
+      audio.play();
+      songTitle.textContent = playlist[currentSong].title;
+    });
+
+    document.addEventListener('keydown', (e) => {
+  // only trigger on spacebar, and not when typing in an input/textarea
+  if (e.code === 'Space' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+});
+    </script>
 </body>
 </html>

@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Click sound effect -->
-  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
-</body>
-<script>
-// Play click sound
-const clickSound = document.getElementById('click-sound');
-document.addEventListener('click', (e) => {
-  // Prevent sound on audio controls or if sound file is missing
-  if (e.target.tagName === 'AUDIO' || !clickSound) return;
-  clickSound.currentTime = 0;
-  clickSound.play();
-});
-</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>homepage</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <style>
-    /* Make subheader text larger */
     .subheader {
       font-size: 1.30rem;
     }
-    /* Make grid box text larger */
     .animated-box {
       font-size: 1.35rem;
     }
@@ -39,7 +24,6 @@ document.addEventListener('click', (e) => {
       width: 64px;
       height: 64px;
     }
-    /* Animate grid boxes on hover */
     .animated-box {
       transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s, background 0.2s;
     }
@@ -49,7 +33,6 @@ document.addEventListener('click', (e) => {
   background: #bfae99 !important;
   color: #3e2712 !important;
     }
-    /* Animate back button on hover */
     .back-btn {
       transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s, background 0.2s, color 0.2s;
     }
@@ -68,7 +51,6 @@ document.addEventListener('click', (e) => {
       if you're here, it means you either are katie or you want to know more about katie. click any of the boxes below to explore and show your appreciation for her!
     </p>
 
-    <!-- 3-box grid -->
     <div class="grid grid-cols-3 gap-8 justify-center">
       <a href="about-katie.html" class="bg-[#d2bfa3]  text-[#3e2712] rounded-2xl flex items-center justify-center min-h-[12rem] w-64 animated-box">
         about katie
@@ -81,50 +63,64 @@ document.addEventListener('click', (e) => {
       </a>
     </div>
   </div>
-   <!-- cd gif at bottom left -->
-  <div style="position: fixed; bottom: 1rem; left: 1rem; display: flex; align-items: center; z-index: 100;">
+   <div style="position: fixed; bottom: 1rem; left: 1rem; display: flex; align-items: center; z-index: 100;">
   <img src="cd_008_static.png" alt="cd disk" class="cd-disk" id="cd-gif" style="position: static; width: 64px; height: 64px; cursor: pointer;">
-    <span id="song-title" style="margin-left: 1rem; color: #fffbe8; font-size: 1.1rem; text-shadow: 1px 1px 6px #2c3e50, 0 1px 8px #0006; font-family: 'VT323', monospace;">No song playing</span>
+    <span id="song-title" style="margin-left: 1rem; color: #fffbe8; font-size: 1.1rem; text-shadow: 1px 1px 6px #2c3e50, 0 1px 8px #0006; font-family: 'VT323', monospace;">click to play a song!</span>
   </div>
   <audio id="bg-music" src="" preload="auto"></audio>
-</body>
-<script>
-// Playlist array
-const playlist = [
-  { src: 'song1.mp3', title: 'Song One' },
-  { src: 'song2.mp3', title: 'Song Two' },
-  { src: 'song3.mp3', title: 'Song Three' }
-];
-let currentSong = -1;
-const audio = document.getElementById('bg-music');
-const cdGif = document.getElementById('cd-gif');
-const songTitle = document.getElementById('song-title');
-let spinning = false;
 
-
-cdGif.addEventListener('click', () => {
-  // Always set to spinning gif on click
-  cdGif.src = 'cd_008.gif';
-  // Advance to next song
-  currentSong = (currentSong + 1) % playlist.length;
-  audio.src = playlist[currentSong].src;
-  audio.play();
-  songTitle.textContent = playlist[currentSong].title;
-});
-
-// When music ends or is paused, return to static image
-audio.addEventListener('ended', () => {
-  cdGif.src = 'cd_008_static.png';
-  // Auto-advance to next song when current ends
-  currentSong = (currentSong + 1) % playlist.length;
-  audio.src = playlist[currentSong].src;
-  audio.play();
-  songTitle.textContent = playlist[currentSong].title;
-});
-audio.addEventListener('pause', () => {
-  cdGif.src = 'cd_008_static.png';
-});
-</script>
   
+  <script>
+    // Playlist array
+    const playlist = [
+      { src: 'music/clairo-slow dance.mp3', title: 'clairo - slow dance' },
+      { src: 'music/dijon_hunni.mp3', title: 'dijon - hunni' },
+      { src: 'music/dont_lie-vampire_weekend.mp3', title: 'vampire weekend - don\'t lie' },
+      { src: 'music/finneas_lets-fall-in-love-for-the-night.mp3', title: 'finneas - let\'s fall in love for the night' },
+      { src: 'music/forrest_gump-frank_ocean', title: 'frank ocean - forrest gump' },
+      { src: 'music/jacob-(feat.-clairo)_you-might-be-sleeping.mp3', title: 'jakob (feat. clairo) - you might be sleeping' },
+      { src: 'music/mk.gee_are-you-looking-up.mp3', title: 'mk.gee - are you looking up' },
+      { src: 'music/omar-apollo_go-away.mp3', title: 'omar apollo - go away' },
+      { src: 'music/frank-ocean_at-your-best.mp3', title: 'frank ocean - at your best' },
+      { src: 'music/sade_kiss-of-life.mp3', title: 'sade - kiss of life' },
+      { src: 'music/the-1975_the-birthday-party-lyrics.mp3', title: 'the 1975 - the birthday party' }, 
+    ];
+    let currentSong = -1;
+    const audio = document.getElementById('bg-music');
+    const cdGif = document.getElementById('cd-gif');
+    const songTitle = document.getElementById('song-title');
+    let spinning = false;
+
+    cdGif.addEventListener('click', () => {
+      cdGif.src = './cd_008.gif';
+      // go to next song
+      currentSong = (currentSong + 1) % playlist.length;
+      audio.src = playlist[currentSong].src;
+      audio.play();
+      songTitle.textContent = playlist[currentSong].title;
+    });
+
+    // when music ends return to static image
+    audio.addEventListener('ended', () => {
+      cdGif.src = './cd_008_static.png';
+      // go to next song when current ends
+      currentSong = (currentSong + 1) % playlist.length;
+      audio.src = playlist[currentSong].src;
+      audio.play();
+      songTitle.textContent = playlist[currentSong].title;
+    });
+
+    document.addEventListener('keydown', (e) => {
+  // only trigger pause on spacebar
+  if (e.code === 'Space' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+});
+  </script>
 </body>
 </html>
