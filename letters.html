@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Letters for Katie</title>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="images/favicon_newnew.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon-newnew.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .header-pop {
@@ -31,7 +31,6 @@
       padding: 3rem;
     }
 
-    /* Back button */
     .back-button-container {
       position: fixed;
       top: 2rem;
@@ -72,7 +71,6 @@
       background: #fbbf24 !important;
       color: #2c3e50 !important;
     }
-    /* Subheader */
     .subheader {
       text-align: center;
       color: #d1d1d1;
@@ -83,7 +81,6 @@
       margin-right: auto;
     }
 
-    /* Floating button */
     .new-letter-btn {
       position: fixed;
       bottom: 1.5rem;
@@ -107,7 +104,6 @@
       background-color: #616161;
     }
 
-     /* Expanded letter popup */
     .expanded-popup {
       position: fixed;
       top: 50%;
@@ -172,7 +168,7 @@
       background-color: rgba(0,0,0,0.5);
       z-index: 9999;
     }
-    /* ADDED: Class to properly hide the modal when 'hidden' is applied by JS */
+
     #letterModal.hidden {
       display: none !important;
     }
@@ -212,14 +208,13 @@
     #letterModal button {
       font-family: 'VT323', monospace;
     }
-    /* New simplified envelope letter card styles */
 .letter-card-container {
   font-family: 'VT323', monospace;
   position: relative;
   width: 22rem;
-  display: flex; /* Change to flex for better vertical alignment */
-  flex-direction: column; /* Stack image and text vertically */
-  align-items: center; /* Center them horizontally */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
   justify-content: center;
   text-align: center;
   cursor: pointer;
@@ -233,7 +228,7 @@
 
 .envelope-icon {
   width: 160px;
-  height: auto; /* Use auto to maintain aspect ratio */
+  height: auto; 
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -362,7 +357,7 @@
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
     import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 
-    // Your web app's Firebase configuration (Consolidated here)
+    // Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyCcccK6dfQpJv2qhGRoin65Nll7h98IhGo",
       authDomain: "hediye-f940c.firebaseapp.com",
@@ -448,7 +443,7 @@ async function loadLetters() {
     lettersContainer.appendChild(card);
   });
 }
-      // Expanded retro popup
+      
       function openLetterPopup(docId, subject, body, author) {
         const popup = document.createElement('div');
         popup.className = 'expanded-popup';
@@ -461,7 +456,7 @@ async function loadLetters() {
         closeBtn.textContent = 'X';
         closeBtn.addEventListener('click', () => popup.remove());
 
-        // Add delete button in popup
+        
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.className = 'delete-letter-btn';
